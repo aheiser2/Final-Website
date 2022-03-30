@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+} 
+
+.logo {
+    width: 60px;
+    margin-top: -10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+}
+
+.container {
+    width: 50%;
+    position: relative;
+    transition: transform 500ms;
+    display: block;
+}
+
+.container img {
+    width: 100%;
+    opacity: 1;
+    height: auto;
+    display: block;
+}
+
+.row .container:focus,
+.row .container:hover {
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .middle {
+    opacity: 1
+}
+
+.text {
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    /* position: fixed;
+    bottom: 0; */
+    padding: 30px 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .text {
+        font-size: 10px;
+        padding: 32px 16px;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .extra-item {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .hero-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        height: 50vh;
+        transform: translate(-50%, -50%);
+        /* text-align: center; */
+    }    
+
+    .row .container:focus,
+    .row .container:hover {
+        transform: none;
+        z-index: 1;
+    }
+
+    .footer {
+        position: relative;
+    }
+
+    .text {
+        font-size: 32px;
+        padding: 32px 16px
+    }
+}
