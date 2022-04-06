@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./Home.css"
 import { Navbar } from './Navbar'
 import Red from './Red.jpg'
@@ -17,43 +18,39 @@ export const Home = () => {
     <div className="hero-section">
         <div className="row">
             <div className="container"> 
+            <Link to="/quiz">
                 <img src={Red} alt="Red"/>
                 <div className="middle" style= {{backgroundColor: "green" }}>
-                    <div className="text"> Sample </div>
+                    <div className="text"> Quiz </div>
                 </div>
+                </Link>
             </div>
-            {/* <div className="container">
-                <img src={Orange} alt="Orange"/>
-                <div className="middle" style={{backgroundColor: "blue"}}>
-                    <div className="text"> Sample </div>
-                </div>
-            </div> */}
             <div className="container">
+            <Link to="/weather">
                 <img src={Yellow} alt="Yellow"/>
                 <div className="middle" style={{backgroundColor: "purple"}}>
-                    <div className="text"> Sample </div>
+                    <div className="text"> Weather </div>
                 </div>
+            </Link> 
             </div>
         </div>
         <div className="row">
             <div className="container">
+            <Link to="/dictionary">
                 <img src={Green} alt="Green"/>
                 <div className="middle" style={{backgroundColor: "red"}}>
-                    <div className="text"> Sample </div>
+                    <div className="text"> Dictionary </div>
                 </div>
+            </Link>
             </div>
             <div className="container">
+            <Link to="/game">
                 <img src={Blue} alt="Blue"/>
                 <div className="middle" style={{backgroundColor: "orange"}}>
-                    <div className="text"> Sample </div>
+                    <div className="text"> Game </div>
                 </div>
+            </Link>
             </div>
-            {/* <div className="container">
-                <img src={Purple} alt="Purple"/>
-                <div className="middle" style={{backgroundColor: "yellow"}}>
-                    <div className="text"> Sample </div>
-                </div>
-            </div> */}
         </div>
     </div>
 
