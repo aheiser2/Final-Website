@@ -1,0 +1,41 @@
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(255, 1, 1);
+}
+
+.game-grid div {
+    width: 100px;
+    height: 100px;
+    color: white;
+    border: thick solid white;
+    background-color: coral;
+    font-size: 50px;
+    padding-top: 10px;
+    text-align: center;
+    /* justify-content: center; */
+    font-weight: bold;
+}
+
+/*
+0 - rgb(0, 225, 255)
+2 - rgb(0, 100, 115)
+4 - rgb(0, 70, 115)
+8 - rgb(0, 150, 255)
+16 - rgb(0, 15, 255)
+32 - rgb(125, 125, 255)
+64 - rgb(75, 50, 100)
+128 - rgb(175, 0, 255)
+256 - rgb(0, 255, 255)
+512 - rgb(0, 100, 50)
+1024 -rgb(0, 250, 100)
+2048 - rgb(255, 0, 0)
+
+
+
+
+
+
+*/

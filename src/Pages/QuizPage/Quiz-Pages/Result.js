@@ -1,4 +1,4 @@
-import "./Result.css";
+import "../Quiz.css";
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@material-ui/core";
@@ -21,7 +21,7 @@ const Result = ({name, score}) => {
         color="secondary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        href="/"
+        href="/quiz"
       >
         Return to Home
       </Button>

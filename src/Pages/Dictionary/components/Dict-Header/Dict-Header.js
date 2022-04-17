@@ -1,7 +1,6 @@
 import { createTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/core';
 import React from 'react';
-// import "./Header.css";
-// import "./Dictionary.css";
+import "../../Dictionary.css";
 import categories from "../../Dictionary-Data/Dictionary-category";
 import { debounce } from 'lodash';
 
@@ -27,20 +26,20 @@ const Header = ({ category, setCategory, word, setWord, LightMode, setMeanings }
     }, 1000);
 
     return (
-        <div className='header'>
-            <span className='title'>{word ? word : "Word Hunt"}</span>
-            <div className='inputs'>
+        <div className='dict-header'>
+            <span className='dict-title'>{word ? word : "Dictionary"}</span>
+            <div className='dict-inputs'>
                 <ThemeProvider theme={darkTheme}>
 
                     <TextField 
-                        className='search'
+                        className='dict-search'
                         id="filled-basic"
                         label="Search a Word" 
                         // value={word}
                         onChange={(e) => handleText(e.target.value)}
                     />
                     <TextField
-                        className='select'
+                        className='dict-select'
                         select
                         label="Language"
                         value={category}

@@ -1,13 +1,13 @@
 import { Button, MenuItem, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
-import "./Quiz.css";
+import "../Quiz.css";
 import Categories, {} from "../Quiz-Data/QuizCategories"; 
 import { useNavigate } from "react-router-dom";
 import ErrorMessage, {} from "../Quiz-Components/ErrorMessage"
 
 
  
-const Home = ({ name, setName, fetchQuestions }) => {
+const QuizHome = ({ name, setName, fetchQuestions }) => {
 
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
@@ -84,9 +84,9 @@ const Home = ({ name, setName, fetchQuestions }) => {
           </Button>
         </div>
       </div>
-      <img src="./QuizPage/undraw_quiz-nlyh.png" className="banner" alt="quiz img" />
+      <img src="/undraw_quiz_nlyh.png" className="banner" alt="quiz img" />
     </div>
   );
 };
 
-export default Home;
+export default QuizHome;

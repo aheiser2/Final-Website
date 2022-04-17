@@ -18,7 +18,11 @@ code {
 
 /*if need be, separate this into "definitions.css" */
 
-.meanings {
+#uppercase {
+  text-transform: capitalize;
+}
+
+.dict-meanings {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -31,13 +35,13 @@ code {
 
 }
 
-.subTitle {
+.dict-subTitle {
   font-size: 5vw;
   font-family: "Montserrat", sans-serif;
 }
 
 @media (max-width: 900px) {
-  .meanings {
+  .dict-meanings {
       height: 60vh;
       overflow-x: hidden;
       overflow-y: scroll;
@@ -56,13 +60,13 @@ code {
 
 /*if need be, separate this into "definitions.css" */
 
-.title {
+.dict-title {
   font-size: 7vw;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
 
-.header {
+.dict-header{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -72,21 +76,22 @@ code {
 }
 
 @media (max-width: 900px) {
-  .header {
+  .dict-header {
       height: 25vh;
   }
-  .title {
+  .dict-title {
       font-size: 11vw;
   }
 }
 
-.inputs {
+.dict-inputs {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.search, .select {
+
+.dict-search, .dict-select {
   width: 43%;
 
 }

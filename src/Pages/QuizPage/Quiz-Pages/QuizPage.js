@@ -3,7 +3,7 @@ import { CircularProgress } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import Question from "../Quiz-Components/Question";
 
-const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
+const QuizPage = ({ name, score, questions, setQuestions, setScore }) => {
  
   const [options, setOptions] = useState();
   const [currQues, setCurrQues] = useState(0);
@@ -62,4 +62,4 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
   );
 };
 
-export default Quiz;
+export default QuizPage;

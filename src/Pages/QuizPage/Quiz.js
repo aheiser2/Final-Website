@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 
 // export const QuizPage = () => {
 //   return (
@@ -6,68 +6,108 @@
 //   )
 // }
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link, Outlet } from 'react-router-dom';
 import './Quiz.css';
 import Footer from './Quiz-Components/QuizFooter'
 import Header from './Quiz-Components/QuizHeader'
-import Home from './Quiz-Pages/QuizHome'
-import Quiz from './Quiz-Pages/QuizPage'
+import QuizHome from './Quiz-Pages/QuizHome'
+import QuizPage from './Quiz-Pages/QuizPage'
 import Result from './Quiz-Pages/Result'
 import { useState } from 'react';
 import axios from 'axios';
 
-function QuizApp() {
-  const [name, setName] = useState("");
-  const [questions, setQuestions] = useState();
-  const [score, setScore] = useState(0);
+function QuizApp( {name, setName, fetchQuestions}) {
+  // const [name, setName] = useState("");
+  // const [questions, setQuestions] = useState();
+  // const [score, setScore] = useState(0);
 
 
-  const fetchQuestions = async( category = "", difficulty = "") => {
+  // const fetchQuestions = async( category = "", difficulty = "") => {
 
-    const {data} = await axios.get(
-      `https://opentdb.com/api.php?amount=10${category && `&category=${category}`
-    }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
-    );
+  //   const {data} = await axios.get(
+  //     `https://opentdb.com/api.php?amount=10${category && `&category=${category}`
+  //   }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
+  //   );
 
-    setQuestions(data.results);
+  //   setQuestions(data.results);
 
-  };
+  // };
 
+
+  
   return (
-    <BrowserRouter>
+    <div>
     <div className="app" style={{backgroundImage: "url(./Damask.jpg)"}}>
     
 
     <Header/>
-    <Routes>
-    <Route path="/quizhome" exact 
-      element={<Home 
+    <QuizHome 
                 name={name} 
                 setName={setName} 
                 fetchQuestions={fetchQuestions}
-              />}>
-    </Route>
-    <Route path="/quizpage" exact 
-      element={<Quiz 
+              />
+                {/* WHy
+    <Link to ="/quizpage" exact 
+      element={<QuizPage 
                 name={name} 
                 questions={questions} 
                 score={score}
                 setScore={setScore}
                 setQuestions={setQuestions}
               />}>
-    </Route>
-    <Route path="/result" exact 
+                hello
+    </Link>
+    <Link to="/result" exact 
       element={<Result
                 name={name} 
                 score={score}
               />}>
-    </Route>
-    </Routes>
+                Hey
+    </Link> */}
 
   
     </div>
+    {/* <Outlet /> */}
     <Footer />
-    </BrowserRouter>
+    </div>
+
+
+
+
+    // <div>
+    // <div className="app" style={{backgroundImage: "url(./Damask.jpg)"}}>
+    
+
+    // <Header/>
+    // <Routes>
+    // <Route path="/quiz/quizhome" exact 
+    //   element={<QuizHome 
+    //             name={name} 
+    //             setName={setName} 
+    //             fetchQuestions={fetchQuestions}
+    //           />}>
+    // </Route>
+    // <Route path="/quiz/quizpage" exact 
+    //   element={<QuizPage 
+    //             name={name} 
+    //             questions={questions} 
+    //             score={score}
+    //             setScore={setScore}
+    //             setQuestions={setQuestions}
+    //           />}>
+    // </Route>
+    // <Route path="/quiz/result" exact 
+    //   element={<Result
+    //             name={name} 
+    //             score={score}
+    //           />}>
+    // </Route>
+    // </Routes>
+
+  
+    // </div>
+    // <Footer />
+    // </div>
   );
 }
 

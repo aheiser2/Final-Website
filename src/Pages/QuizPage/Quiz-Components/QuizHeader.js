@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Header.css";
+import "../Quiz.css";
 
+
+// changed from 'to = ""' to "/quiz"
 const Header = () => {
   return (
   <div className='header'>
-      <Link to="/" className='title'>
-      Intuitive Quiz Hub
+      <Link to="/quiz" className='title'> 
+      Quizmaster
       </Link>
       <hr className='divider'></hr>
   </div>
