@@ -48,8 +48,14 @@ export const Dictionary = () => {
 
       const data = await axios.get(
         `https://od-api.oxforddictionaries.com/api/v2/entries/${category}/${word}`,
-        {headers: {"app_id": app_id, "app_key": app_key, "Access-Control-Allow-Origin": "*"}}
-      )
+        {
+          headers: {
+            "app_id": app_id,
+            "app_key": app_key,
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      );
 
       // setGerMeanings(gerData.data)
       setMeanings(data.data)

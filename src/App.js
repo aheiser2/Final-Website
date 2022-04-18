@@ -33,9 +33,7 @@ function App() {
   return (
     
     <BrowserRouter>
-    <div className="app" style={{backgroundImage: "url(./Damask.jpg)"}}>
-    
-    {/* <Header/> */}
+
     <Routes>
     <Route path="/"
       element={<Home />}>
@@ -83,9 +81,6 @@ function App() {
       }
     />
     </Routes>
-
-  
-    </div>
     </BrowserRouter>
   );
 }

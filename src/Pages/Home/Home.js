@@ -12,7 +12,7 @@ import Purple from './Purple.jpg'
 export const Home = () => {
     //make container the href if wanting to make these connect to other websites/pages
   return (
-    <div>
+    <div className='home-section'>
     <Navbar />
 
     <div className="hero-section">

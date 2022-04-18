@@ -4,9 +4,9 @@ import Logo from "./aheiser-profile-pic2.jpg"
 
 export const Navbar = () => {
   return (
-    <div className="nav">
+    <div className="home-nav">
         <ul>
-            <li className="extra-item"><a href="/">Home</a></li>
+            <li className="extra-item"><a href="https://www.linkedin.com/in/abigail-heiser2/">LinkedIn</a></li>
             <li>
                 <img className="logo" src={Logo} alt="logo"/>
             </li>

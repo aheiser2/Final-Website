@@ -5,7 +5,7 @@ const Footer = () => {
     <div style={{ textAlign: "center", marginBottom: 10 }}>
         Made by {' '}   
         <a 
-            href='https://www.youtube.com/watch?v=OL0KFczy2Rw'
+            href="https://www.linkedin.com/in/abigail-heiser2/"
             style={{ cursor: "pointer"}}
         >
             Abby Heiser

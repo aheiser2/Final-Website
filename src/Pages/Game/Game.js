@@ -1,23 +1,60 @@
-import { assignIn, once } from 'lodash'
-import React from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
+import { ReturnButton } from '../../Return-Button'
+import { Container } from '@material-ui/core'
 import "./Game.css"
 
-// import React from 'react'
-
-// const Game = () => {
-//   return (
-//     <div>Game</div>
-//   )
-// }
 
 const Game = () => {
-  document.addEventListener('DOMContentLoaded', ()=> {
+    let gameHasInitialized = false;
+
+  useEffect(() => {
+      console.log('useEffect');
+      if (gameHasInitialized) return;
+    gameHasInitialized = true;
+
+      Init();
+  });
+
+//    useLayoutEffect(() => {
+//      console.log('useLayoutEffect');
+//    });
+
+  // let gameHasInitialized = false;
+
+//   let intervalId = setInterval(() => {
+//     console.log('interval');
+
+//     // if (gameHasInitialized) {
+//     //     clearInterval(intervalId);
+//     //     return;
+//     // }
+
+//     const checkElement = document.querySelector('.game-grid');
+//     if (checkElement == null) return;
+
+//     clearInterval(intervalId);
+//     Init();
+//   }, 100);
+
+//   setTimeout(function() {
+//     Init();
+//   }, 5000);
+
+//   document.addEventListener('DOMContentLoaded', ()=> {
+//     Init();
+//   });
+
+  function Init() {
+    // if (gameHasInitialized) return;
+    // gameHasInitialized = true;
+
     const gridDisplay = document.querySelector('.game-grid')
     const scoreDisplay = document.getElementById('game-score')
     const resultDisplay = document.getElementById('game-result')
     const width = 4
     let squares = []
     let score = 0
+    let highestScore = 0
   
   
     //create a board
@@ -160,6 +197,24 @@ const Game = () => {
         }
         checkForWin()
     }
+
+    // see what else is going wrong with this - can't get it to actually add
+    // function checkHighestScore() {
+    //     for (let i=0; i < 15; i++) {
+    //         if (squares[i].innerHTML < squares[i+1].innerHTML) {
+    //             highestScore = parseInt(squares[i+1].innerHTML)
+    //         }
+    //     }
+    //     return scoreDisplay.innerHTML = highestScore
+    // }
+    // function checkHighestScore(squares) {
+    //     // let highestScore = 0
+    //     // for (let i=0; i < squares.length; i++) {
+    //     const scoreArray = squares.map(Number)
+    //     scoreDisplay.innerHTML = Math.max(scoreArray)
+    //     console.log(scoreArray)
+    //     // }
+    // }
   
     //assign keycodes
     function control(e) {
@@ -234,48 +289,68 @@ const Game = () => {
     function assignColor() {
       for (let i = 0; i< squares.length; i++){
         if (squares[i].innerHTML == 0) {
-            squares[i].style.backgroundColor = "rgb(0, 225, 255)"
-            squares[i].style.borderColor = "rgb(0, 50, 250)"
+            squares[i].style.backgroundColor = "deepskyblue"
+            squares[i].style.borderColor = "dodgerblue"
         } else if (squares[i].innerHTML == 2) {
-          squares[i].style.backgroundColor = "rgb(0, 100, 115)"
-          squares[i].style.borderColor = "rgb(100, 150, 50)"
+          squares[i].style.backgroundColor = "lightpink"
+          squares[i].style.borderColor = "indianred"
         } else if (squares[i].innerHTML == 4) {
-          squares[i].style.backgroundColor = "rgb(0, 70, 115)"
-          squares[i].style.borderColor = "rgb(60, 50, 20)"
+          squares[i].style.backgroundColor = "gold"
+          squares[i].style.borderColor = "goldenrod"
         } else if (squares[i].innerHTML == 8) {
-          squares[i].style.backgroundColor = "rgb(0, 150, 255)"
+          squares[i].style.backgroundColor = "forestgreen"
+          squares[i].style.borderColor = "green"
         } else if (squares[i].innerHTML == 16) {
-          squares[i].style.backgroundColor = "rgb(0, 15, 255)"
+          squares[i].style.backgroundColor = "darkviolet"
+          squares[i].style.borderColor = "indigo"
         } else if (squares[i].innerHTML == 32) {
-          squares[i].style.backgroundColor = "rgb(125, 125, 255)"
+          squares[i].style.backgroundColor = "lightskyblue"
+          squares[i].style.borderColor = "royalblue"
         } else if (squares[i].innerHTML == 64) {
-          squares[i].style.backgroundColor = "rgb(75, 50, 100)"
+          squares[i].style.backgroundColor = "orange"
+          squares[i].style.borderColor = "darkorange"
         } else if (squares[i].innerHTML == 128) {
-          squares[i].style.backgroundColor = "rgb(175, 0, 255)"
+          squares[i].style.backgroundColor = "mediumvioletred"
+          squares[i].style.borderColor = "maroon"
         } else if (squares[i].innerHTML == 256) {
-          squares[i].style.backgroundColor = "rgb(0, 255, 255)"
+          squares[i].style.backgroundColor = "mediumturquoise"
+          squares[i].style.borderColor = "lightseagreen"
         } else if (squares[i].innerHTML == 512) {
-          squares[i].style.backgroundColor = "rgb(0, 100, 50)"
+          squares[i].style.backgroundColor = "cornflowerblue"
+          squares[i].style.borderColor = "darkblue"
         } else if (squares[i].innerHTML == 1024) {
-          squares[i].style.backgroundColor = "rgb(0, 250, 100)"
+          squares[i].style.backgroundColor = "pink"
+          squares[i].style.borderColor = "palevioletred"
+          squares[i].style.fontSize = "50px"
+          squares[i].style.paddingTop = "30px"
         } else if (squares[i].innerHTML == 2048) {
-          squares[i].style.backgroundColor = "rgb(255, 0, 0)"
+          squares[i].style.backgroundColor = "crimson"
+          squares[i].style.borderColor = "darkred"
+          squares[i].style.fontSize = "50px"
+          squares[i].style.paddingTop = "30px"
         }
     }
     }
   
   
-  })
+  }
+  //})
   return (
-      <div>
+      <div className='game-bg'>
+        <div className='game-container'>
           <div className="game-score-container"> 
-              <div className="game-score-title">score</div>
-              <span id="game-score">0</span>
+              <div className="game-score-title">2048</div>
+              <span id="game-score">Score: 0</span>
           </div>
   
           <div id="game-result"></div>
-  
+            <div id="game-border">
           <div className="game-grid"></div>
+          </div>
+        </div>
+        <Container maxWidth="md" style={{ display: "flex", flexDirection: "column", justifyContent: 'space-evenly' }}>
+        <ReturnButton />
+      </Container>
       </div>
     
   )

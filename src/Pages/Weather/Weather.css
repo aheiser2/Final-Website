@@ -18,47 +18,58 @@ code {
     box-sizing: border-box;
   }
   
+  #uppercase {
+    text-transform: capitalize;
+  }
+
   body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
-  .app {
-    background-image: url('./Weather-Pics/Warm-Weather.jpg');
+  .weather-app {
+    background-image: linear-gradient(25deg, rgb(132, 0, 255), rgb(255, 230, 0));;
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
   
-  .app.cold {
+  .weather-app.cold {
     background-image: url('./Weather-Pics/Cold-Weather.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
   
-  .app.storm{
+  .weather-app.storm{
     background-image: url('./Weather-Pics/Storm.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
   
-  .app.cold-sunny {
+  .weather-app.cold-sunny {
     background-image: url('./Weather-Pics/Cold-Sunny-Weather.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
   
-  .app.cloudy {
+  .weather-app.cloudy {
     background-image: url('./Weather-Pics/Cloudy.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
   
-  .app.rain {
+  .weather-app.rain {
     background-image: url('./Weather-Pics/Rainy-Weather.jpg');
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease-out
+  }
+
+  .weather-app.sun {
+    background-image: url('./Weather-Pics/Warm-Weather.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
