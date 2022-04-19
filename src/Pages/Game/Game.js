@@ -74,9 +74,10 @@ const Game = () => {
   
     //generate a number randomly
     function generate() {
+        let numbers = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4]
         let randomNumber = Math.floor(Math.random() * squares.length)
         if (squares[randomNumber].innerHTML == 0) {
-            squares[randomNumber].innerHTML = 2
+            squares[randomNumber].innerHTML = numbers[Math.floor(Math.random()*numbers.length)]
             checkForGameOver()
         } else generate()
         
@@ -174,12 +175,12 @@ const Game = () => {
   
     function combineRow() {
         for (let i=0; i < 15; i++) {
-            if (squares[i].innerHTML === squares[i+1].innerHTML) {
+            if ((i%4 !==3) && squares[i].innerHTML === squares[i+1].innerHTML) {
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i+1].innerHTML)
                 squares[i].innerHTML = combinedTotal
                 squares[i + 1].innerHTML = 0
                 score += combinedTotal
-                scoreDisplay.innerHTML = score
+                scoreDisplay.innerHTML = `Score: ${score}`
             }
         }
         checkForWin()
@@ -192,7 +193,7 @@ const Game = () => {
                 squares[i].innerHTML = combinedTotal
                 squares[i + width].innerHTML = 0
                 score += combinedTotal
-                scoreDisplay.innerHTML = score
+                scoreDisplay.innerHTML = `Score: ${score}`
             }
         }
         checkForWin()
@@ -218,47 +219,64 @@ const Game = () => {
   
     //assign keycodes
     function control(e) {
-        if (e.keyCode === 39) {
+        if (e.key === "ArrowRight") {
             keyRight()
-        } else if (e.keyCode === 37) {
+        } else if (e.key === "ArrowLeft") {
             keyLeft()
-        } else if (e.keyCode === 38) {
+        } else if (e.key === "ArrowUp") {
             keyUp()
-        } else if (e.keyCode === 40) {
+        } else if (e.key === "ArrowDown") {
             keyDown()
         }
     }
     document.addEventListener('keyup', control)
   
     function keyRight() {
+        let previous = JSON.stringify(squares.map(num=> num.innerHTML)) //get numbers on grid
         moveRight()
         combineRow()
         moveRight()
-        generate()
+        let changes = JSON.stringify(squares.map(num=>num.innerHTML)) //get numbers on grid after changes from move
+        if (previous != changes) {
+            generate()
+        }
+        // generate()
         assignColor()
     }
   
     function keyLeft() {
+        let previous = JSON.stringify(squares.map(num=> num.innerHTML)) //get numbers on grid
         moveLeft()
         combineRow()
         moveLeft()
-        generate()
+        let changes = JSON.stringify(squares.map(num=>num.innerHTML)) //get numbers on grid after changes from move
+        if (previous != changes) {
+            generate()
+        }
         assignColor()
     }
   
     function keyUp() {
+        let previous = JSON.stringify(squares.map(num=>num.innerHTML)) //get numbers on grid after changes from move
         moveUp()
         combineColumn()
         moveUp()
-        generate()
+        let changes = JSON.stringify(squares.map(num=>num.innerHTML)) //get numbers on grid after changes from move
+        if (previous != changes) {
+            generate()
+        }
         assignColor()
     }
   
     function keyDown() {
+        let previous = JSON.stringify(squares.map(num=>num.innerHTML)) //get numbers on grid after changes from move
         moveDown()
         combineColumn()
         moveDown()
-        generate()
+        let changes = JSON.stringify(squares.map(num=>num.innerHTML)) //get numbers on grid after changes from move
+        if (previous != changes) {
+            generate()
+        }
         assignColor()
     }
   
@@ -273,6 +291,7 @@ const Game = () => {
     }
   
     //check for game over
+    //change eventually to check for no possible moves instead of for no zeros
     function checkForGameOver() {
         let zeros = 0
         for (let i = 0; i< squares.length; i++){
@@ -321,13 +340,23 @@ const Game = () => {
         } else if (squares[i].innerHTML == 1024) {
           squares[i].style.backgroundColor = "pink"
           squares[i].style.borderColor = "palevioletred"
-          squares[i].style.fontSize = "50px"
-          squares[i].style.paddingTop = "30px"
+          if (window.matchMedia("(max-width:800px)").matches){
+            squares[i].style.fontSize = "35px"
+            squares[i].style.paddingTop = "20px"
+          } else {
+            squares[i].style.fontSize = "50px"
+            squares[i].style.paddingTop = "30px"
+            }
         } else if (squares[i].innerHTML == 2048) {
           squares[i].style.backgroundColor = "crimson"
           squares[i].style.borderColor = "darkred"
-          squares[i].style.fontSize = "50px"
-          squares[i].style.paddingTop = "30px"
+          if (window.matchMedia("(max-width:800px)").matches){
+            squares[i].style.fontSize = "35px"
+            squares[i].style.paddingTop = "20px"
+          } else {
+            squares[i].style.fontSize = "50px"
+            squares[i].style.paddingTop = "30px"
+            }
         }
     }
     }
@@ -339,7 +368,7 @@ const Game = () => {
       <div className='game-bg'>
         <div className='game-container'>
           <div className="game-score-container"> 
-              <div className="game-score-title">2048</div>
+              <div className="game-score-title">~ 2048 ~</div>
               <span id="game-score">Score: 0</span>
           </div>
   

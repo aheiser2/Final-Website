@@ -1,8 +1,8 @@
 const categories = [
-    { value: "English", label: "en-us" },
-    { value: "French", label: "fr" },
-    { value: "Hindi", label: "hi" },
-    { value: "Spanish", label: "es" },
+    { value: "English", label: "en" },
+    // { value: "French", label: "fr" },
+    // { value: "Hindi", label: "hi" },
+    // { value: "Spanish", label: "es" },
    
 
     // { value: "English", label: "en-us" },

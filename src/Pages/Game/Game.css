@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 .game-bg {
-    background-color: rgb(0, 153, 110);
+    background-color: rgb(36, 35, 35);
     height: 100vh;
     margin: 0;
     font-family: 'Abril Fatface', cursive;
@@ -20,23 +20,23 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    background-color: aquamarine;
-    border: solid rgb(133, 23, 23) 10px;
+    background-color: rgb(217, 252, 240);
+    border: solid maroon 10px;
     height: 220px;
     width: 100%;
 }
 
 .game-score-title {
     font-size: 100px;
-    color:blueviolet;
+    color: maroon;
 }
 
 #game-score, #game-result {
     font-size: 50px;
-    color: palevioletred
+    color: maroon
 }
 #game-border {
-      border: solid rgb(2, 83, 56) 20px;
+      border: solid maroon 20px;
       border-radius: 10px;
 }
 
@@ -45,7 +45,7 @@
     flex-wrap: wrap;
     width: 600px;
     height: 600px;
-    background-color: rgb(255, 255, 255);
+    background-color: black;
 }
 
 .game-grid div {
@@ -54,10 +54,49 @@
     font-style: normal;
     color: white;
     border: thick solid white;
+    border-radius: 10px;
     background-color: pink;
     font-size: 75px;
     padding-top: 20px;
     text-align: center;
     /* justify-content: center; */
     font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+    .game-container {
+        height: 600px;
+    }
+    
+    .game-score-container {
+        height: 180px;
+        width: 100%;
+    }
+    
+    .game-score-title {
+        font-size: 60px;
+    }
+    
+    #game-score, #game-result {
+        font-size: 30px;
+    }
+    #game-border {
+          border: solid maroon 20px;
+          border-radius: 10px;
+    }
+    
+    .game-grid {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .game-grid div {
+        width: 100px;
+        height: 100px;
+        border: thick solid white;
+        /* border-radius: 10px; */
+        font-size: 30px;
+        padding-top: 20px;
+    }
+    
 }

@@ -15,9 +15,6 @@ code {
     monospace;
 }
 
-
-/*if need be, separate this into "definitions.css" */
-
 #uppercase {
   text-transform: capitalize;
 }
@@ -28,24 +25,19 @@ code {
   overflow-y: scroll;
   scrollbar-width: thin;
   height: 55vh;
-  border: 10px solid rgb(222, 5, 175);
+  border: 10px solid rgb(0, 102, 255);
   border-radius: 10px;
   padding: 10px 20px;
   overflow-x: hidden;
-
 }
+
+/* rgb(222, 5, 175)  - pink
+rgb(119, 0, 255); - purple
+*/
 
 .dict-subTitle {
-  font-size: 5vw;
+  font-size: 3vw;
   font-family: "Montserrat", sans-serif;
-}
-
-@media (max-width: 900px) {
-  .dict-meanings {
-      height: 60vh;
-      overflow-x: hidden;
-      overflow-y: scroll;
-  } 
 }
 
 .singleMean {
@@ -56,32 +48,20 @@ code {
   margin: 10px 0;
 }
 
-/*End of defintions.css*/
-
-/*if need be, separate this into "definitions.css" */
-
 .dict-title {
-  font-size: 7vw;
+  font-size: 130px;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
 
 .dict-header{
+  /* background-color: rgb(0, 102, 255); */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   height: 35vh;
   width: 100%;
-}
-
-@media (max-width: 900px) {
-  .dict-header {
-      height: 25vh;
-  }
-  .dict-title {
-      font-size: 11vw;
-  }
 }
 
 .dict-inputs {
@@ -91,9 +71,27 @@ code {
 }
 
 
-.dict-search, .dict-select {
-  width: 43%;
+.dict-search {
+  width: 50%;
 
 }
 
-/* End of header.css*/
+@media (max-width: 900px) {
+  .dict-meanings {
+      height: 60vh;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    } 
+  
+  .dict-header {
+      height: 25vh;
+  }
+  .dict-title {
+      font-size: 11vw;
+  }
+  
+  .dict-subTitle {
+    font-size: 5vw;
+  }
+}
+
