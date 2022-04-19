@@ -8,7 +8,7 @@ const ErrorMessage = ({children}) => {
             padding: 10,
             marginBottom: 10,
             borderRadius: 4,
-            backgroundColor: "orangered",
+            backgroundColor: "red",
             textAlign: "center",
             color: "white",
             textTransform: "capitalize",

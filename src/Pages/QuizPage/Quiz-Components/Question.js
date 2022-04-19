@@ -70,7 +70,7 @@ const Question = ({ currQues, setCurrQues, questions, options, correct, setScore
                     color="secondary"
                     size="large"
                     style={{ width: 185 }}
-                    href="/"
+                    href="/quiz"
                     onClick={()=>handleQuit}
                     >
                         Quit

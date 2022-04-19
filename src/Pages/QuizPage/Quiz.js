@@ -17,8 +17,9 @@ import { ReturnButton } from '../../Return-Button';
 function QuizApp( {name, setName, fetchQuestions}) {
    
   return (
-    <div>
-      <div className="app" style={{backgroundImage: "url(./Damask.jpg)"}}>
+    <div className='quiz-bg'>
+      {/* <div className="quiz-app" style={{backgroundImage: "url(./Damask.jpg)"}}> */}
+      <div className="quiz-app" >
 
         <Header/>
         <QuizHome 

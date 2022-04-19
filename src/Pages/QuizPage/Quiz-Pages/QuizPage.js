@@ -10,7 +10,7 @@ const QuizPage = ({ name, score, questions, setQuestions, setScore }) => {
 
 
   useEffect(() => {
-    console.log(questions);
+    // console.log(questions);
 
     setOptions(
       questions && 

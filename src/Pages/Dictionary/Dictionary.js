@@ -38,7 +38,6 @@ export const Dictionary = () => {
         `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
       );
       setMeanings(data.data)
-      console.log(data.data)
 
     } catch (error) {
       console.log(error);

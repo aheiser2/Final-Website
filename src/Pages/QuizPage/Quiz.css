@@ -12,20 +12,28 @@ a {
     color: inherit;
 }
 
-.app {
+.quiz-bg {
+    background-color: rgb(10, 228, 230);
+}
+
+.quiz-app {
     min-height: 98.5vh;
-    border: 8px solid #5a394d93;
+    background-color: rgb(10, 228, 230);
     margin: 5px;
     padding: 5px;
 }
 
 /*Home.css*/
-.content {
+.quiz-content {
+    background-color: rgb(10, 228, 230);
     display: flex;
     justify-content: space-around;
 }
 
-.settings {
+.quiz-settings {
+    background-color: rgb(10, 228, 230);
+    color: white;
+    text-shadow: 1px 1px 10px black, 0 0 25px blue, 0 0 5px darkblue;
     width: 45%;
     padding: 10px;
     display: flex;
@@ -36,28 +44,12 @@ a {
 }
 
 .banner {
-    width: 55%;
+    width: 600px;
     align-self: center;
     padding: 8px;
 }
 
-@media (max-width: 800px) {
-    .content {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-    .banner {
-        width: 85%;
-        padding: 0;
-        padding-top: 20px;
-    }
-    .settings {
-        width: 100%;
-    }
-    
-}
-
-.settings_select {
+.quiz-settings_select {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -66,8 +58,28 @@ a {
     justify-content: space-evenly;
 }
 
+.quiz-name-selector {
+    color: white;
+    text-shadow: none;
+    background-color:rgb(153, 153, 255)
+}
+
+.quiz-category-selector {
+    color: white;
+    text-shadow: none;
+    background-color:rgb(109, 109, 204)
+}
+
+.quiz-difficulty-selector {
+    color: white;
+    text-shadow: none;
+    background-color:rgb(82, 82, 175)
+}
+
 /*Quiz.css*/
 .quiz {
+    height: 1000px;
+    background-color: rgb(10, 228, 230);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,6 +88,8 @@ a {
 }
 
 .subtitle {
+    background-color: darkblue;
+    color: white;
     font-size: 25px;
     border: 1px solid black;
     box-shadow: 4px 4px 2px black;
@@ -83,6 +97,8 @@ a {
 }
 
 .quizInfo {
+    background-color: rgb(10, 228, 230);
+    color: white;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -92,16 +108,24 @@ a {
 
 /*result.css*/
 .result {
+    height: 100vh;
+    background-color: rgb(10, 228, 230);
+    color: white;
+    text-shadow: 1px 1px 10px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 100px;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60vh;
     text-align: center;
 }
 
 
 /*Question.css*/
 .question {
+    background-color: rgb(0, 109, 110);
+    color: white;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -109,18 +133,28 @@ a {
 }
 
 .singleQuestion {
+    background-color: rgb(10, 228, 230);
+    color: black;
     width: 95%;
     min-height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 5px solid gray;
+    border: 5px solid white;
     padding: 20px;
     margin-top: 10px;
 }
 
+/* .quiz-category-selector {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(95, 95, 170);
+} */
+
 .options {
+    background-color: rgb(0, 109, 110);
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -131,6 +165,10 @@ a {
 }
 
 .singleOption {
+    background-color: white;
+    color: rgb(31, 0, 63);
+    font-size: 15px;
+    font-weight: bold;
     width: 46%;
     height: 50px;
     padding: 15px 20px;
@@ -138,47 +176,87 @@ a {
     box-shadow: 0 0 2px black;
 }
 
-@media (max-width: 614px) {
-    .singleOption {
-        width: 100%;
-    }
-}
-
 .select {
-    background-color: rgb(7, 207, 0);
+    background-color: rgb(0, 250, 42);
     color: white;
+    text-shadow: 1px 1px 10px black, 0 0 25px blue, 0 0 5px darkblue;
     box-shadow: 0 0 1px black;
 }
 
 .wrong {
     background-color: rgb(233, 0, 0);
     color: white;
+    text-shadow: 1px 1px 10px black, 0 0 25px blue, 0 0 5px darkblue;
     box-shadow: 0 0 1px black;
 }
 
 .controls {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(10, 228, 230);
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
 
 /*Header.css*/
-.title {
+.quiz-title {
     text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 10px black, 0 0 25px blue, 0 0 5px darkblue;
     font-size: 8vw;
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
 }
 
-.header {
+.quiz-header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.divider {
+.quiz-divider {
+    height: 10px;
     margin: 10px;
-    width: 100%;
-    background-color: palevioletred;
+    width: 100vw;
+    background-color: rgb(0, 102, 255);
 }
 
+@media (max-width: 1200px) {
+    .quiz-title {
+        font-size: 9vw;
+    }
+    .banner {
+        width: 60%;
+        padding: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .quiz-title {
+        font-size: 10vw;
+    }
+    .quiz-content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .banner {
+        width: 65%;
+        padding: 0;
+        padding-top: 20px;
+    }
+    .quiz-settings {
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 614px) {
+    .quiz-title {
+        font-size: 11vw;
+    }
+    .singleOption {
+        width: 100%;
+    }
+}

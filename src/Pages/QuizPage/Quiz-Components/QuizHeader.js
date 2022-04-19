@@ -6,11 +6,11 @@ import "../Quiz.css";
 // changed from 'to = ""' to "/quiz"
 const Header = () => {
   return (
-  <div className='header'>
-      <Link to="/quiz" className='title'> 
+  <div className='quiz-header'>
+      <Link to="/quiz" className='quiz-title'> 
       Quizmaster
       </Link>
-      <hr className='divider'></hr>
+      <hr className='quiz-divider'></hr>
   </div>
   );
 };

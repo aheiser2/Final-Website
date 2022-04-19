@@ -1,4 +1,4 @@
-import { Button, MenuItem, TextField } from '@material-ui/core';
+import { Button, Menu, MenuItem, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import "../Quiz.css";
 import Categories, {} from "../Quiz-Data/QuizCategories"; 
@@ -28,14 +28,15 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
   };
 
   return (
-    <div className='content'>
-      <div className='settings'>
+    <div className='quiz-content'>
+      <div className='quiz-settings'>
         <span style={{ fontSize: 30 }}>Quiz Settings</span>
 
-        <div className='settings_select'>
+        <div className='quiz-settings_select'>
           {error && <ErrorMessage>Please Fill Out All of the Fields</ErrorMessage>}
 
           <TextField 
+            className="quiz-name-selector"
             style={{ marginBottom: 25 }}
             label="Enter Your Name"
             variant="outlined"
@@ -43,6 +44,7 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
           />
 
           <TextField
+            className="quiz-category-selector"
             select
             style={{ marginBottom: 30 }}
             label="Select Category"
@@ -50,14 +52,19 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
             onChange={(e) => setCategory(e.target.value)}
             value={category}
             >
+            {/* <Menu
+             style={{ display: "flex", flexDirection: "row", padding: 0}}
+            > */}
             {Categories.map((cat) => (
-              <MenuItem key={cat.category} value={cat.value}>
+              <MenuItem className="quiz-category" key={cat.category} value={cat.value}>
                 {cat.category}
               </MenuItem>
             ))}
+            {/* </Menu> */}
           </TextField>  
 
           <TextField
+          className="quiz-difficulty-selector"
             select
             style={{ marginBottom: 30 }}
             label="Select Difficulty"
@@ -84,7 +91,7 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
           </Button>
         </div>
       </div>
-      <img src="/undraw_quiz_nlyh.png" className="banner" alt="quiz img" />
+      <img src="/blue-green-thoughts.jpg" className="banner" alt="quiz img" />
     </div>
   );
 };
