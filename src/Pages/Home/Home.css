@@ -1,22 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body {
-    background-color: pink;
+    background-color: rgb(12, 54, 70);
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
+    overflow-x: hidden;
 } 
 
 .logo {
-    width: 60px;
+    height: 162px;
     margin-top: -10px;
+    border: solid rgb(237, 228, 185) 3px;
+    position: relative;
+    bottom: 50px;
+    text-align: center;
 }
+/*rgb(245, 235, 178)*/
+
+/*Testing multiple pictures moving through*/
+/* @keyframes example {
+    33% {
+        background-image: url("../Home/Keyframes/white-prog.png");
+    }
+    66% {
+        background-image: url("../Home/Keyframes/gray-dict.png");
+    }
+    100% {
+        background-image: url("../Home/Keyframes/gray-prog.png");
+    }
+  }
+
+.cont-dict {
+    transition-property: opacity;
+    transition-duration: s;
+    transition-timing-function: linear;
+    background-size: contain;
+    background-image: url("../Home/Keyframes/white-dict.png");
+}
+
+.cont-dict:hover {
+    animation-name: example;
+    animation-duration: 8s;
+} */
+
+/*END*/
+
+/* .cont-quiz {
+    background-size: contain;
+    background-image: url("../Home/Keyframes/quizmaster.png");
+}
+
+.cont-weather {
+    background-size: contain;
+    background-image: url("../Home/Keyframes/gray-dict.png");
+}
+
+.cont-game {
+    background-size: contain;
+    background-image: url("../Home/Keyframes/2048.png");
+} */
+
 
 .home-nav {
     display: flex;
     justify-content: center;
-    background-image: url("../../../public/Damask.jpg");
-    background-color: aquamarine;
-    padding: 10px 0;
+    height: 200px;
+    background-image: url("../../../public/bigger-blue-gold.jpg");
+    border-bottom: 3px solid rgb(237, 228, 185);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    /* background-size: cover; */
+    background-size: 1580px 660px;
+    background-color: rgb(0, 75, 50);
+    padding: 15px 0;
 }
 
 ul {
@@ -24,11 +80,18 @@ ul {
 }
 
 li {
+    color: white;
+    /* text-shadow: 1px 1px 10px rgb(255, 255, 255), 0 0 25px rgb(255, 0, 0), 0 0 5px darkred; */
+    font-size: 20px;
+    position: relative;
+    right: 8px;
+    top: 45px;
     list-style-type: none;
-    padding: 20px;
+    padding: 18px;
 }
 
 .row {
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
 }
@@ -36,18 +99,21 @@ li {
 .hero-section {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 50%;
+    left: 52%;
+    width: 100%;
     height: 50%;
     transform: translate(-50%, -50%);
-    /* text-align: center; */
+    text-align: center;
 }
 
 .container {
-    width: 50%;
+    border: solid rgb(237, 228, 185) 5px;
+    width: 23vw;
     position: relative;
     transition: transform 500ms;
     display: block;
+    margin: 10px;
+    padding: 5px
 }
 
 .container img {
@@ -55,11 +121,12 @@ li {
     opacity: 1;
     height: auto;
     display: block;
+    z-index: 1;
 }
 
 .row .container:focus,
 .row .container:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
     z-index: 1;
 }
 
@@ -80,18 +147,20 @@ li {
 }
 
 .text {
+    text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 25px;
     padding: 16px 32px;
 }
 
 .footer {
     display: flex;
     justify-content: center;
-    /* position: fixed;
-    bottom: 0; */
     padding: 30px 0;
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: rgb(237, 228, 185);
 }
 
 a {
@@ -102,30 +171,55 @@ a {
 
 @media only screen and (max-width: 1500px) {
     .text {
+        font-size: 20px;
+        padding: 16px 8px;
+    }
+/* Making this a new part???*/
+    .hero-section {
+        position: absolute;
+        top: 55%;
+        left: 49%;
+        width: 80%;
+        height: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .container {
+        max-width: 50%;
+        width: 40%;
+        position: relative;
+        margin: 5px;
+    }
+/*END*/
+
+    .footer {
+        position: relative;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .text {
         font-size: 2vh;
         padding: 16px 8px;
     }
 
-    .footer {
-        position: fixed;
-        bottom: 0;
-    }
 }
 
 
 @media only screen and (max-width: 800px) {
-    .extra-item {
+    /* .extra-item {
         display: none;
-    }
+    } */
 
     .container {
-        left: 20%;
+        left: 15%;
         width: 60%;
     }
 
     .hero-section {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         width: 80vw;
         height: 50vh;
@@ -139,9 +233,9 @@ a {
         z-index: 1;
     }
 
-    .footer {
+    /* .footer {
         position: relative;
-    }
+    } */
 
     .text {
         font-size: 20px;

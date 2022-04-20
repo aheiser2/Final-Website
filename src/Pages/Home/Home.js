@@ -2,12 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Home.css"
 import { Navbar } from './Navbar'
-import Red from './Red.jpg'
-import Orange from './Orange.jpg'
-import Yellow from './Yellow.jpg'
-import Green from './Green.jpg'
-import Blue from './Blue.jpg'
-import Purple from './Purple.jpg'
+import Quiz from '../Home/Keyframes/quizmaster.png'
+import Dictionary from '../Home/Keyframes/gray-dict.png'
+import Weather from '../Home/Keyframes/white-dict.png'
+import Game from '../Home/Keyframes/2048.png'
 
 export const Home = () => {
     //make container the href if wanting to make these connect to other websites/pages
@@ -17,45 +15,48 @@ export const Home = () => {
 
     <div className="hero-section">
         <div className="row">
-            <div className="container"> 
+            <div className="container cont-quiz"> 
             <Link to="/quiz">
-                <img src={Red} alt="Red"/>
+                <img src={Quiz} alt="Quiz"/>
                 <div className="middle" style= {{backgroundColor: "green" }}>
-                    <div className="text"> Quiz </div>
+                    <div className="text">Quiz</div>
                 </div>
-                </Link>
+            </Link>
             </div>
-            <div className="container">
+            <div className="container cont-weather">
             <Link to="/weather">
-                <img src={Yellow} alt="Yellow"/>
+                <img src={Weather} alt="Weather"/>
                 <div className="middle" style={{backgroundColor: "purple"}}>
-                    <div className="text"> Weather </div>
+                    <div className="text">Weather</div>
                 </div>
             </Link> 
             </div>
-        </div>
-        <div className="row">
-            <div className="container">
+            <div className="container cont-dict">
             <Link to="/dictionary">
-                <img src={Green} alt="Green"/>
-                <div className="middle" style={{backgroundColor: "red"}}>
-                    <div className="text"> Dictionary </div>
+                <img src={Dictionary} alt="Dictionary"/>
+                <div className="middle" style={{backgroundColor: "rgba(100,100,100, .5"}}>
+                    <div className="text">Dictionary</div>
                 </div>
             </Link>
             </div>
-            <div className="container">
+            <div className="container cont-game">
             <Link to="/game">
-                <img src={Blue} alt="Blue"/>
+                <img src={Game} alt="Game"/>
                 <div className="middle" style={{backgroundColor: "orange"}}>
-                    <div className="text"> Game </div>
+                    <div className="text">Game</div>
                 </div>
             </Link>
             </div>
         </div>
+        
+        {/* <div className="row">
+        
+        </div> */}
     </div>
 
     <div id="footer" className="footer">
-        <p>Contact me at aheiser2@yahoo.com</p>
+    <a href="mailto:aheiser2@yahoo.com">Contact me at: aheiser2@yahoo.com </a>
+            {/* <p>Contact me at aheiser2@yahoo.com</p> */}
     </div>
     </div>
   )

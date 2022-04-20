@@ -46,7 +46,7 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
           <TextField
             className="quiz-category-selector"
             select
-            style={{ marginBottom: 30 }}
+            style={{ marginBottom: 25 }}
             label="Select Category"
             variant="outlined"
             onChange={(e) => setCategory(e.target.value)}
@@ -66,7 +66,7 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
           <TextField
           className="quiz-difficulty-selector"
             select
-            style={{ marginBottom: 30 }}
+            style={{ marginBottom: 25 }}
             label="Select Difficulty"
             variant="outlined"
             onChange={(e) => setDifficulty(e.target.value)}

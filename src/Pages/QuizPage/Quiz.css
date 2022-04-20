@@ -66,6 +66,10 @@ a {
 
 .quiz-category-selector {
     color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
     text-shadow: none;
     background-color:rgb(109, 109, 204)
 }
@@ -145,13 +149,6 @@ a {
     padding: 20px;
     margin-top: 10px;
 }
-
-/* .quiz-category-selector {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(95, 95, 170);
-} */
 
 .options {
     background-color: rgb(0, 109, 110);
