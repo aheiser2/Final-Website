@@ -4,11 +4,10 @@ import "./Home.css"
 import { Navbar } from './Navbar'
 import Quiz from '../Home/Keyframes/quizmaster.png'
 import Dictionary from '../Home/Keyframes/gray-dict.png'
-import Weather from '../Home/Keyframes/white-dict.png'
+import Weather from '../Home/Keyframes/Weather-pic.png'
 import Game from '../Home/Keyframes/2048.png'
 
 export const Home = () => {
-    //make container the href if wanting to make these connect to other websites/pages
   return (
     <div className='home-section'>
     <Navbar />
@@ -18,32 +17,35 @@ export const Home = () => {
             <div className="container cont-quiz"> 
             <Link to="/quiz">
                 <img src={Quiz} alt="Quiz"/>
-                <div className="middle" style= {{backgroundColor: "green" }}>
-                    <div className="text">Quiz</div>
+                <div className="middle" style= {{backgroundColor: "rgba(12, 54, 70,.8)" }}>
+                    <div className="text">This quiz app allows you to select one of 23 quiz categories, as well as a level of
+                        difficulty, to answer questions about</div>
                 </div>
             </Link>
             </div>
             <div className="container cont-weather">
             <Link to="/weather">
                 <img src={Weather} alt="Weather"/>
-                <div className="middle" style={{backgroundColor: "purple"}}>
-                    <div className="text">Weather</div>
+                <div className="middle" style={{backgroundColor: "rgba(12, 54, 70,.8)" }}>
+                    <div className="text">This weather app lets you input a city, state, and country to find out what 
+                        the temperature is and what the weather is like</div>
                 </div>
             </Link> 
             </div>
             <div className="container cont-dict">
             <Link to="/dictionary">
                 <img src={Dictionary} alt="Dictionary"/>
-                <div className="middle" style={{backgroundColor: "rgba(100,100,100, .5"}}>
-                    <div className="text">Dictionary</div>
+                <div className="middle" style={{backgroundColor: "rgba(12, 54, 70,.8)" }}>
+                    <div className="text">This dictionary app lets you type in a word and get back any definitions, as
+                        well as possibly examples or synonyms</div>
                 </div>
             </Link>
             </div>
             <div className="container cont-game">
             <Link to="/game">
                 <img src={Game} alt="Game"/>
-                <div className="middle" style={{backgroundColor: "orange"}}>
-                    <div className="text">Game</div>
+                <div className="middle" style={{backgroundColor: "rgba(12, 54, 70,.8)" }}>
+                    <div className="text">This classic game lets you combine blocks to try and reach the winning score of 2048</div>
                 </div>
             </Link>
             </div>
