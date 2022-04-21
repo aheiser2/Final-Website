@@ -18,21 +18,14 @@ code {
     box-sizing: border-box;
   }
   
-  #uppercase {
+  .uppercase {
     text-transform: capitalize;
   }
 
   body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
-  
-  .weather-app {
-    background-image: linear-gradient(25deg, rgb(132, 0, 255), rgb(255, 230, 0));;
-    background-size: cover;
-    background-position: bottom;
-    transition: 1s ease-out
-  }
-  
+    
   .weather-app.cold {
     background-image: url('./Weather-Pics/Cold-Weather.jpg');
     background-size: cover;
@@ -62,30 +55,95 @@ code {
   }
   
   .weather-app.rain {
-    background-image: url('./Weather-Pics/Rainy-Weather.jpg');
+    background-image: url('./Weather-Pics/Rain.png');
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease-out
+  }
+  .weather-app.fog {
+    background-image: url('./Weather-Pics/Fog.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
 
-  .weather-app.sun {
+  .weather-app.smoke {
+    background-image: url('./Weather-Pics/Smoke.webp');
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease-out
+  }
+
+  .weather-app.sand {
+    background-image: url('./Weather-Pics/Sand.jpg');
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease-out
+  }
+
+  .weather-app.tornado {
+    background-image: url('./Weather-Pics/Tornado.jpg');
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease-out
+  }
+
+  .weather-app.sunny {
     background-image: url('./Weather-Pics/Warm-Weather.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 1s ease-out
   }
+
+  .weather-app {
+    background-image: conic-gradient(red 25deg, 
+     pink 130deg, pink, palevioletred,  darkred 290deg, darkred, red);
+    background-size: cover;
+    background-position: bottom;
+    transition: 1s ease-out;
+    /* color: palevioletred */
+  }
   
   main {
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
     /* creates a gradient on the pictures */
     padding: 25px;
+    overflow-y: hidden;
   }
+
+  @media (max-width: 800px) {
+    
+   .search-box {
+     display: flex;
+     flex-wrap: wrap;
+     padding: 20px;
+     }
+
+    select, input {
+    width: 100%;
+    margin-top: -205px;
+    font-size: 20px;
+    display: block
+  }
+
+  .submit-button {
+    width: 50%;
+    padding: 15px;
+    margin-top: -25px;
+    font-size: 20px;
+    display: block;
+
+  }
+}
   
   .search-box {
     width: 100%;
     margin: 0 0 75px;
     display: flex;
+    flex-direction: row;
+    flex: 0.8;
+    text-align: center;
     justify-content: center;
   }
   

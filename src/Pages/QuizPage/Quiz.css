@@ -48,7 +48,7 @@ a {
     align-self: center;
     padding: 8px;
 }
-
+/*main container for settings */
 .quiz-settings_select {
     display: flex;
     flex-direction: column;

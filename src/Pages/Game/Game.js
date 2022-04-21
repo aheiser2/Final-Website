@@ -363,7 +363,7 @@ const Game = () => {
   
   
   }
-  //})
+  
   return (
       <div className='game-bg'>
         <div className='game-container'>
