@@ -11,7 +11,6 @@ import Game from './Pages/Game/Game';
 // import { Gameboard } from './Pages/Game/Gameboard';
 import Quiz from './Pages/QuizPage/Quiz';
 import QuizPage from './Pages/QuizPage/Quiz-Pages/QuizPage'
-import QuizHome from './Pages/QuizPage/Quiz-Pages/QuizHome'
 import Result from './Pages/QuizPage/Quiz-Pages/Result';
 
 function App() {

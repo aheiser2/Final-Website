@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react'
+import React, { useEffect } from 'react'
 import { ReturnButton } from '../../Return-Button'
 import { Container } from '@material-ui/core'
 import "./Game.css"
@@ -54,7 +54,7 @@ const Game = () => {
     const width = 4
     let squares = []
     let score = 0
-    let highestScore = 0
+    
   
   
     //create a board

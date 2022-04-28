@@ -1,4 +1,4 @@
-import { Button, Menu, MenuItem, TextField } from '@material-ui/core';
+import { Button, MenuItem, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import "../Quiz.css";
 import Categories, {} from "../Quiz-Data/QuizCategories"; 
@@ -52,15 +52,12 @@ const QuizHome = ({ name, setName, fetchQuestions }) => {
             onChange={(e) => setCategory(e.target.value)}
             value={category}
             >
-            {/* <Menu
-             style={{ display: "flex", flexDirection: "row", padding: 0}}
-            > */}
             {Categories.map((cat) => (
               <MenuItem className="quiz-category" key={cat.category} value={cat.value}>
                 {cat.category}
               </MenuItem>
             ))}
-            {/* </Menu> */}
+
           </TextField>  
 
           <TextField

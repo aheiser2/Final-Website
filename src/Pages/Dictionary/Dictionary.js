@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Switch } from '@material-ui/core';
+import { Container, Switch } from '@material-ui/core';
 import { blue } from '@material-ui/core/colors';
 // import transitions from '@material-ui/core/styles/transitions';
 import { withStyles } from '@material-ui/styles';

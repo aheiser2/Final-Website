@@ -1,4 +1,4 @@
-import { createTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/core';
+import { createTheme, TextField, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import "../../Dictionary.css";
 // import categories from "../../Dictionary-Data/Dictionary-category";

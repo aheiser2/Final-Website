@@ -1,12 +1,4 @@
-// import React from 'react'
-
-// export const Weather = () => {
-//   return (
-//     <div>Weather</div>
-//   )
-// }
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container } from "@material-ui/core";
 import "./Weather.css";
 import { ReturnButton } from "../../Return-Button";
