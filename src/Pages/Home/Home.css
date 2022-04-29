@@ -87,7 +87,7 @@ li {
     right: 8px;
     top: 45px;
     list-style-type: none;
-    padding: 18px;
+    padding: 16px;
 }
 
 .row {
@@ -182,7 +182,7 @@ a {
 /* Making this a new part???*/
     .hero-section {
         position: absolute;
-        top: 55%;
+        top: 500px;
         left: 49%;
         width: 80%;
         height: 50%;
@@ -217,11 +217,14 @@ a {
     .container {
         left: 15%;
         width: 80%;
+
     }
 
     .hero-section {
+        /* position: fixed; */
+        /* bottom: 0; */
         position: absolute;
-        top: 55%;
+        top: 490px;
         left: 50%;
         width: 80vw;
         height: 50vh;
@@ -237,8 +240,9 @@ a {
 
     .text {
         font-size: 12px;
-        padding: 32px 16px
+        padding: 32px 16px;
     }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -249,7 +253,7 @@ a {
 
     .hero-section {
         position: absolute;
-        top: 55%;
+        top: 490px;
         left: 50%;
         width: 100vw;
         height: 50vh;
@@ -258,6 +262,6 @@ a {
     }    
     .text {
         font-size: 9px;
-        padding: 8px 8px
+        padding: 8px 8px;
     }
 }
